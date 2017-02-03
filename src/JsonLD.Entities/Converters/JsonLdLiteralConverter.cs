@@ -1,7 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using NullGuard;
 
 namespace JsonLD.Entities.Converters
 {
@@ -26,7 +25,7 @@ namespace JsonLD.Entities.Converters
         /// <summary>
         /// Writes the JSON representation of the object.
         /// </summary>
-        public override void WriteJson(JsonWriter writer, [AllowNull] object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             writer.WriteValue(value);
         }
@@ -37,7 +36,7 @@ namespace JsonLD.Entities.Converters
         public sealed override object ReadJson(
             JsonReader reader,
             Type objectType,
-            [AllowNull] object existingValue,
+            object existingValue,
             JsonSerializer serializer)
         {
             if (reader.TokenType != JsonToken.StartObject)

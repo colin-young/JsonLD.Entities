@@ -1,24 +1,24 @@
 REDIRECTS: ON
 CONTENT: NONE
-FRAMEWORK: NET40, NET45
+FRAMEWORK: NET40, NET45, NETCORE10
 NUGET
   remote: https://www.nuget.org/api/v2
     Costura.Fody (1.3.3)
       Fody (>= 1.26.1)
     dotNetRDF (1.0.12)
-      HtmlAgilityPack (>= 1.4.9)
-      Newtonsoft.Json (>= 8.0.3)
-      VDS.Common (1.6.4)
-    FakeItEasy (2.2)
+      HtmlAgilityPack (>= 1.4.9) - framework: net40, net45
+      Newtonsoft.Json (>= 8.0.3) - framework: net40, net45
+      VDS.Common (1.6.4) - framework: net40, net45
+    FakeItEasy (2.3.3)
     Fody (1.29.4)
-    gitlink (2.3)
-    GitVersionTask (3.6.3)
+    gitlink (2.4.1)
+    GitVersionTask (3.6.5)
     HtmlAgilityPack (1.4.9.5)
     ImpromptuInterface (6.2.2)
     InfoOf.Fody (1.0.4)
       Fody (>= 1.29.2)
     json-ld.net (1.0.5)
-      Newtonsoft.Json (>= 6.0.4)
+      Newtonsoft.Json (>= 6.0.4) - framework: net40, net45
     MethodTimer.Fody (1.16)
       Fody (>= 1.29.2)
     Newtonsoft.Json (9.0.1)
@@ -26,10 +26,10 @@ NUGET
       Fody (>= 1.29.2)
     NUnit (2.6.4)
     OpenCover (4.6.519)
-    Rdf.Vocabularies (1.1.1)
+    Rdf.Vocabularies (1.2)
     SpecFlow (2.1)
     StyleCop.Analyzers (1.0)
-    VDS.Common (1.6.4)
+    VDS.Common (1.6.4) - framework: net40, net45
 GIST
   remote: tpluscode/a285267d2543466fc35c3a168c846f9f
-    FULLPROJECT (eac8af5adfdcfc43b63a5d5edf88c082e83761e0)
+    FULLPROJECT (c9b7a831e53e929f2ecce09b14a61e28007b669f)

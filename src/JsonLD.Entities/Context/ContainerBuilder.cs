@@ -1,12 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities.Context
 {
     /// <summary>
     /// Used to define property's @container
     /// </summary>
-    [NullGuard(ValidationFlags.All)]
     public class ContainerBuilder
     {
         private readonly JProperty property;

@@ -1,12 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities.Context
 {
     /// <summary>
     /// Used to build property maps for JSON-LD @context
     /// </summary>
-    [NullGuard(ValidationFlags.All)]
     public class PropertyBuilder : JProperty
     {
         /// <summary>
@@ -44,7 +42,7 @@ namespace JsonLD.Entities.Context
         /// <summary>
         /// Defines an internationalized property
         /// </summary>
-        public PropertyBuilder Language([AllowNull] string languageCode)
+        public PropertyBuilder Language(string languageCode)
         {
             var property = this.EnsureExpandedDefinition()
                                .With(JsonLdKeywords.Language, languageCode);

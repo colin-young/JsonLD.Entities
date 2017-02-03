@@ -1,6 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json;
-using NullGuard;
 
 namespace JsonLD.Entities.Converters
 {
@@ -12,7 +11,7 @@ namespace JsonLD.Entities.Converters
         /// <summary>
         /// Writes the JSON representing the <see cref="IriRef"/> <paramref name="value"/>.
         /// </summary>
-        public override void WriteJson(JsonWriter writer, [AllowNull] object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var iriRef = (IriRef)value;
             if (iriRef == default(IriRef))
@@ -31,7 +30,7 @@ namespace JsonLD.Entities.Converters
         /// <summary>
         /// Reads the JSON into the a <see cref="IriRef"/> object.
         /// </summary>
-        public override object ReadJson(JsonReader reader, Type objectType, [AllowNull] object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {

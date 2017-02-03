@@ -2,7 +2,6 @@
 using JsonLD.Core;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities
 {
@@ -86,7 +85,7 @@ namespace JsonLD.Entities
         /// <returns>
         /// A compacted JSON-LD object
         /// </returns>
-        public JObject Serialize(object entity, [AllowNull] SerializationOptions options = null)
+        public JObject Serialize(object entity, SerializationOptions options = null)
         {
             options = options ?? new SerializationOptions();
             var jsonLd = JObject.FromObject(entity, this.jsonSerializer);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities
 {
@@ -25,7 +24,6 @@ namespace JsonLD.Entities
         /// </summary>
         /// <param name="modelType">Type of the model.</param>
         /// <returns>JSON object or null if @context not found</returns>
-        [return: AllowNull]
         public JToken GetContext(Type modelType)
         {
             JToken context;

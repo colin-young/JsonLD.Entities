@@ -1,6 +1,7 @@
+source https://nuget.org/api/v3
 source https://nuget.org/api/v2
 
-framework: net40, net45
+framework: net40, net45, netcoreapp1.0
 content: none
 redirects: on
 

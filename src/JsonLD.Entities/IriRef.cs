@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using JsonLD.Entities.Converters;
 using Newtonsoft.Json;
-using NullGuard;
 
 namespace JsonLD.Entities
 {
@@ -36,11 +35,11 @@ namespace JsonLD.Entities
         /// Gets the URI.
         /// </summary>
         [JsonProperty(JsonLdKeywords.Id)]
-        public string Value { [return: AllowNull] get; }
+        public string Value { get; }
 
 #pragma warning disable SA1600 // Elements must be documented
 #pragma warning disable 1591
-        public static explicit operator IriRef([AllowNull] Uri uri)
+        public static explicit operator IriRef(Uri uri)
         {
             if (uri == null)
             {
@@ -50,7 +49,7 @@ namespace JsonLD.Entities
             return new IriRef(uri);
         }
 
-        public static explicit operator IriRef([AllowNull] string uriString)
+        public static explicit operator IriRef(string uriString)
         {
             if (uriString == null)
             {
@@ -75,7 +74,7 @@ namespace JsonLD.Entities
             return string.Equals(this.Value, other.Value);
         }
 
-        public override bool Equals([AllowNull] object obj)
+        public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {

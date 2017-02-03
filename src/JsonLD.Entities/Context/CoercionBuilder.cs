@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities.Context
 {
@@ -7,7 +6,6 @@ namespace JsonLD.Entities.Context
     /// Used to create properties with type coercion
     /// </summary>
     /// <remarks>See http://www.w3.org/TR/json-ld/#type-coercion</remarks>
-    [NullGuard(ValidationFlags.All)]
     public class CoercionBuilder
     {
         private readonly JProperty property;

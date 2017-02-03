@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.1",
+      "type": "platform"
+    },
+    "json-ld.net": "1.0.5",
+    "NullGuard.Fody": "1.4.6",
+    "InfoOf.Fody": "1.0.4",
+    "Costura.Fody": "2.0.0-beta0018",
+    "Newtonsoft.Json": "9.0.2-beta2"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": { }
+  },
+}

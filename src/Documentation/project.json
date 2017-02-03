@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.1",
+      "type": "platform"
+    },
+    "Newtonsoft.Json": "9.0.1",
+    "NUnit": "3.6.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
+    }
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  }
+}

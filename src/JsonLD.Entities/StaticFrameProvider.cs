@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities
 {
@@ -28,7 +27,6 @@ namespace JsonLD.Entities
         /// If the frame contains a @context, it will be replaced by
         /// a context provided by <see cref="IContextProvider" />
         /// </remarks>
-        [return: AllowNull]
         public JObject GetFrame(Type modelType)
         {
             JObject context;

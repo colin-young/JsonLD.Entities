@@ -15,7 +15,7 @@ First let's import the required namespaces.
 using System;
 using System.Collections.Generic;
 using JsonLD.Entities;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 /**

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
-using ImpromptuInterface;
-using ImpromptuInterface.InvokeExt;
+using System.Reflection;
 using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities
 {
@@ -27,7 +25,6 @@ namespace JsonLD.Entities
         /// <summary>
         /// Gets @context for an entity type.
         /// </summary>
-        [return: AllowNull]
         public JToken GetContext(Type type)
         {
             var context = this.GetContextFromProvider(type) ?? GetContextFromProperty(type);
@@ -38,7 +35,6 @@ namespace JsonLD.Entities
         /// <summary>
         /// Gets @context for an entity instance.
         /// </summary>
-        [return: AllowNull]
         public JToken GetContext(object entity)
         {
             var context = this.GetContextFromProvider(entity.GetType())
@@ -72,15 +68,15 @@ namespace JsonLD.Entities
         {
             try
             {
-                const string propertyName = "get_Context";
-                InvokeMemberName invokeArgs = propertyName;
-                if (type.IsGenericTypeDefinition)
+                if (type.GetTypeInfo().IsGenericTypeDefinition)
                 {
-                    var typeArgs = Enumerable.Repeat(typeof(object), type.GetGenericArguments().Length);
+                    var typeArgs = Enumerable.Repeat(typeof(object), type.GetTypeInfo().GetGenericArguments().Length);
                     type = type.MakeGenericType(typeArgs.ToArray());
                 }
 
-                return Impromptu.InvokeGet(type.WithStaticContext(), "Context");
+                var prop = type.GetProperty("Context");
+                return prop.GetMethod.Invoke(type, null);
+                //return Impromptu.InvokeGet(type.WithStaticContext(), "Context");
             }
             catch (RuntimeBinderException)
             {
@@ -92,7 +88,8 @@ namespace JsonLD.Entities
         {
             try
             {
-                return Impromptu.InvokeMember(entity.GetType().WithStaticContext(), "GetContext", entity);
+                return entity.GetType().GetProperty("GetContext").GetMethod.Invoke(entity, null);
+                //return Impromptu.InvokeMember(entity.GetType().WithStaticContext(), "GetContext", entity);
             }
             catch (RuntimeBinderException)
             {

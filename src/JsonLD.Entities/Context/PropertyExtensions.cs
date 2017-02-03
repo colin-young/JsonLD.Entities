@@ -4,14 +4,12 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NullGuard;
 
 namespace JsonLD.Entities.Context
 {
     /// <summary>
     /// JSON-LD extensions to <see cref="JProperty" />
     /// </summary>
-    [NullGuard(ValidationFlags.All)]
     public static class PropertyExtensions
     {
         private static readonly JsonLdContractResolver ContractResolver = new JsonLdContractResolver();
@@ -66,7 +64,7 @@ namespace JsonLD.Entities.Context
         /// <summary>
         /// Appends a property to the property definition
         /// </summary>
-        internal static JProperty With(this JProperty property, string name, [AllowNull] string value)
+        internal static JProperty With(this JProperty property, string name, string value)
         {
             property.Value[name] = value;
             return property;

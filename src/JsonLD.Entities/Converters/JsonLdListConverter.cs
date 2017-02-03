@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Newtonsoft.Json;
-using NullGuard;
 
 namespace JsonLD.Entities.Converters
 {
@@ -14,7 +14,7 @@ namespace JsonLD.Entities.Converters
         /// <summary>
         /// Reads the JSON representation of the object.
         /// </summary>
-        public override object ReadJson(JsonReader reader, Type objectType, [AllowNull] object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.StartObject)
             {

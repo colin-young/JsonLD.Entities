@@ -166,16 +166,25 @@
         </Reference>
       </ItemGroup>
     </When>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And $(TargetFrameworkVersion) == 'v1.6') Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0')">
+      <ItemGroup>
+        <Reference Include="HtmlAgilityPack">
+          <HintPath>..\..\packages\HtmlAgilityPack\lib\portable-net45+netcore45+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
   </Choose>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5')">
       <ItemGroup>
+        <Reference Include="Microsoft.CSharp">
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="ImpromptuInterface">
           <HintPath>..\..\packages\ImpromptuInterface\lib\net40\ImpromptuInterface.dll</HintPath>
           <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Microsoft.CSharp">
           <Paket>True</Paket>
         </Reference>
       </ItemGroup>
@@ -202,6 +211,15 @@
         </Reference>
       </ItemGroup>
     </When>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And $(TargetFrameworkVersion) == 'v1.6') Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0')">
+      <ItemGroup>
+        <Reference Include="json-ld.net">
+          <HintPath>..\..\packages\json-ld.net\lib\netstandard1.3\json-ld.net.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
   </Choose>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
@@ -222,9 +240,18 @@
         </Reference>
       </ItemGroup>
     </When>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And $(TargetFrameworkVersion) == 'v1.6') Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\netstandard1.0\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5')">
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And $(TargetFrameworkVersion) == 'v1.6') Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0') Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5'))">
       <ItemGroup>
         <Reference Include="nunit.framework">
           <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
@@ -235,10 +262,10 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5')">
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And $(TargetFrameworkVersion) == 'v1.6') Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0') Or ($(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5')">
       <ItemGroup>
         <Reference Include="Rdf.Vocabularies">
-          <HintPath>..\..\packages\Rdf.Vocabularies\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Rdf.Vocabularies.dll</HintPath>
+          <HintPath>..\..\packages\Rdf.Vocabularies\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Rdf.Vocabularies.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

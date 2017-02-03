@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using NullGuard;
 
 namespace JsonLD.Entities
 {
     /// <summary>
     /// Contains JSON-LD special property names
     /// </summary>
-    [NullGuard(ValidationFlags.All)]
     public static class JsonLdKeywords
     {
         /// <summary>
@@ -90,7 +88,6 @@ namespace JsonLD.Entities
         /// </summary>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns>a JSON-LD keyword or null</returns>
-        [return: AllowNull]
         internal static string GetKeywordForProperty(string propertyName)
         {
             KnownPropertyNames.TryGetValue(propertyName, out propertyName);
